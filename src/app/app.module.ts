@@ -4,13 +4,14 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BooksListComponent } from './books/books-list/books-list/books-list.component';
+import { BooksListComponent } from './books/books-list/books-list.component';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
 import { BooksService } from './_services/books.service';
+import { BookDetailComponent } from './books/book-detail/book-detail.component';
 
 @NgModule({
-  declarations: [AppComponent, BooksListComponent],
+  declarations: [AppComponent, BooksListComponent, BookDetailComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

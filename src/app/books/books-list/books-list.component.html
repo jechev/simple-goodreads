@@ -1,0 +1,41 @@
+<form
+  class="form-inline"
+  #searchForm="ngForm"
+  (ngSubmit)="searchBooks()"
+  novalidate
+>
+  <div class="form-group px-2">
+    <label for="searchValue">Search</label>
+    <input
+      type="text"
+      class="form-control ml-1"
+      style="width: 150px;"
+      id="searchValue"
+      name="searchValue"
+      [(ngModel)]="searchValue"
+    />
+  </div>
+  <button type="submit" class="btn btn-primary" style="margin-left: 10px;">
+    Search
+  </button>
+</form>
+<table>
+  <tr>
+    <th>Cover</th>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Published Date</th>
+    <th></th>
+  </tr>
+  <tr *ngFor="let book of books">
+    <td><img src="{{ book.img }}" alt="cover" /></td>
+    <td>{{ book.title }}</td>
+    <td>{{ book.author }}</td>
+    <td>{{ book.publishedDate }}</td>
+    <td>
+      <a [routerLink]="['/book/' + book.id]" class="btn btn-primary"
+        >Go to the book</a
+      >
+    </td>
+  </tr>
+</table>

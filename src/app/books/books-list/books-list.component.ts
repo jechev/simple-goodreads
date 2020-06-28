@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BooksService } from 'src/app/_services/books.service';
-import { Book } from '../../../_models/book';
+import { Book } from '../../_models/book';
 
 @Component({
   selector: 'app-books-list',
@@ -43,12 +43,21 @@ export class BooksListComponent implements OnInit {
     res.forEach((element) => {
       const book: Book = new Book();
       book.id = element.id;
-      book.title = element.volumeInfo.title;
-      if (element.volumeInfo.authors) {
-        book.author = element.volumeInfo.authors[0];
+      if (element.volumeInfo) {
+        if (element.volumeInfo.title) {
+          book.title = element.volumeInfo.title;
+        }
+        if (element.volumeInfo.authors) {
+          book.author = element.volumeInfo.authors[0];
+        }
+        if (element.volumeInfo.imageLinks.smallThumbnail) {
+          book.img = element.volumeInfo.imageLinks.smallThumbnail;
+        }
+        if (element.volumeInfo.publishedDate) {
+          book.publishedDate = element.volumeInfo.publishedDate;
+        }
       }
-      book.img = element.volumeInfo.imageLinks.smallThumbnail;
-      book.publishedDate = element.volumeInfo.publishedDate;
+
       books.push(book);
     });
 

@@ -9,12 +9,18 @@ export class BooksService {
   constructor() {}
 
   public getBooksForHomeScreen() {
-    return axios.get(`${this.baseUrl}/volumes?q=dz&projection=lite`);
+    return axios.get(
+      `${this.baseUrl}/volumes?q=subject:thriller&projection=lite`
+    );
   }
 
   public getBooksBySearch(searchValue) {
     return axios.get(
       `${this.baseUrl}/volumes?q=${searchValue}&projection=lite`
     );
+  }
+
+  public getBookById(id) {
+    return axios.get(`${this.baseUrl}/volumes/${id}`);
   }
 }
