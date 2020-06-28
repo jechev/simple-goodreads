@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "simple-goodreads"
+    }
+  },
+  "defaultProject": "simple-goodreads",
+  "cli": {
+    "analytics": "be86ccc9-8ad8-4b98-aa0c-7da6f73be3c2"
+  }
 }

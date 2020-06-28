@@ -1,0 +1,57 @@
+import { Component, OnInit } from '@angular/core';
+import { BooksService } from 'src/app/_services/books.service';
+import { Book } from '../../../_models/book';
+
+@Component({
+  selector: 'app-books-list',
+  templateUrl: './books-list.component.html',
+  styleUrls: ['./books-list.component.css'],
+})
+export class BooksListComponent implements OnInit {
+  books: Book[] = new Array();
+  searchValue: string;
+  constructor(private booksService: BooksService) {}
+
+  ngOnInit() {
+    this.loadBooks();
+  }
+
+  loadBooks() {
+    this.booksService
+      .getBooksForHomeScreen()
+      .then((res) => {
+        this.books = this._convertResponseToBooksArray(res.data.items);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+  searchBooks() {
+    this.booksService
+      .getBooksBySearch(this.searchValue)
+      .then((res) => {
+        this.books = this._convertResponseToBooksArray(res.data.items);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+  private _convertResponseToBooksArray(res): Book[] {
+    const books: Book[] = new Array();
+    res.forEach((element) => {
+      const book: Book = new Book();
+      book.id = element.id;
+      book.title = element.volumeInfo.title;
+      if (element.volumeInfo.authors) {
+        book.author = element.volumeInfo.authors[0];
+      }
+      book.img = element.volumeInfo.imageLinks.smallThumbnail;
+      book.publishedDate = element.volumeInfo.publishedDate;
+      books.push(book);
+    });
+
+    return books;
+  }
+}
