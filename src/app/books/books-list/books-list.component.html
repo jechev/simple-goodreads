@@ -27,7 +27,7 @@
     <th></th>
   </tr>
   <tr *ngFor="let book of books">
-    <td><img [src]="book.img" alt="cover" /></td>
+    <td><img [src]="book.img || '../../../assets/book.png'" alt="cover" /></td>
     <td>{{ book.title }}</td>
     <td>{{ book.author }}</td>
     <td>{{ book.publishedDate }}</td>
@@ -38,3 +38,17 @@
     </td>
   </tr>
 </table>
+<div class="d-flex justify-content-center" *ngIf="totalItems > 10">
+  <pagination
+    [boundaryLinks]="true"
+    [totalItems]="totalItems"
+    [itemsPerPage]="10"
+    previousText="&lsaquo;"
+    nextText="&rsaquo;"
+    firstText="&laquo;"
+    lastText="&raquo;"
+    [(ngModel)]="page"
+    (pageChanged)="pageChanged($event)"
+  >
+  </pagination>
+</div>

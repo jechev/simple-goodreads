@@ -8,8 +8,30 @@ import { Book } from '../../_models/book';
   styleUrls: ['./books-list.component.scss'],
 })
 export class BooksListComponent implements OnInit {
+  page = 1;
+  totalItems: number;
   books: Book[] = new Array();
   searchValue: string;
+  genre = 'thriller';
+  genres: string[] = [
+    'Fantasy',
+    'Science fiction',
+    'Western',
+    'Romance',
+    'Thriller',
+    'Mystery',
+    'Detective story',
+    'Dystopia',
+    'Memoir',
+    'Biography',
+    'Play',
+    'Musical',
+    'Satire',
+    'Haiku',
+    'Horror',
+    'DIY (Do It Yourself)',
+    'Dictionary',
+  ];
   constructor(private booksService: BooksService) {}
 
   ngOnInit() {
@@ -18,8 +40,10 @@ export class BooksListComponent implements OnInit {
 
   loadBooks() {
     this.booksService
-      .getBooksForHomeScreen()
+      .getBooksByGenre(this.genre, (this.page - 1) * 10)
       .then((res) => {
+        this.totalItems = Number(res.data.totalItems);
+        console.log(this.totalItems);
         this.books = this._convertResponseToBooksArray(res.data.items);
       })
       .catch((err) => {
@@ -31,6 +55,7 @@ export class BooksListComponent implements OnInit {
     this.booksService
       .getBooksBySearch(this.searchValue)
       .then((res) => {
+        this.totalItems = Number(res.data.totalItems);
         this.books = this._convertResponseToBooksArray(res.data.items);
       })
       .catch((err) => {
@@ -50,7 +75,10 @@ export class BooksListComponent implements OnInit {
         if (element.volumeInfo.authors) {
           book.author = element.volumeInfo.authors[0];
         }
-        if (element.volumeInfo.imageLinks.smallThumbnail) {
+        if (
+          element.volumeInfo.imageLinks &&
+          element.volumeInfo.imageLinks.smallThumbnail
+        ) {
           book.img = element.volumeInfo.imageLinks.smallThumbnail;
         }
         if (element.volumeInfo.publishedDate) {
@@ -68,5 +96,10 @@ export class BooksListComponent implements OnInit {
     });
 
     return books;
+  }
+
+  pageChanged(event: any) {
+    this.page = event.page;
+    this.loadBooks();
   }
 }

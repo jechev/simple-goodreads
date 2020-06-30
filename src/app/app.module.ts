@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -33,6 +34,7 @@ import { BooksByUserComponent } from './books/books-by-user/books-by-user.compon
     FormsModule,
     FormsModule,
     BsDropdownModule.forRoot(),
+    PaginationModule.forRoot(),
     BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes),
   ],

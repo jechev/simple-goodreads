@@ -10,9 +10,9 @@ export class BooksService {
   private dbUrl = 'http://localhost:3000';
   constructor() {}
 
-  public getBooksForHomeScreen() {
+  public getBooksByGenre(genre, startIndex) {
     return axios.get(
-      `${this.baseUrl}/volumes?q=subject:thriller&projection=lite`
+      `${this.baseUrl}/volumes?q=subject:${genre}&startIndex=${startIndex}&projection=lite`
     );
   }
 
