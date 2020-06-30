@@ -1,0 +1,58 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3">
+  <div class="container">
+    <a class="navbar-brand" [routerLink]="['/home']">Simple GoodReads</a>
+
+    <ul *ngIf="loggedIn()" class="navbar-nav mr-auto">
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/mybooks/read']">Read Books</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/mybooks/wantToRead']"
+          >Want to Read Books</a
+        >
+      </li>
+    </ul>
+
+    <div *ngIf="loggedIn()" class="dropdown" dropdown>
+      <span class="mr-1"> </span>
+      <a class="dropdown-toggle text-light" dropdownToggle>
+        Welcome, {{ email }}
+      </a>
+
+      <div class="dropdown-menu mt-3" *dropdownMenu>
+        <a class="dropdown-item" (click)="logout()"
+          ><i class="fa fa-sign-out"></i> Logout</a
+        >
+      </div>
+    </div>
+    <div *ngIf="!loggedIn()">
+      <form
+        #loginForm="ngForm"
+        class="form-inline my-2 my-lg-0"
+        (ngSubmit)="login()"
+      >
+        <input
+          class="form-control mr-sm-2"
+          type="text"
+          name="email"
+          placeholder="Email"
+          required
+          [(ngModel)]="model.email"
+          [email]="true"
+        />
+        <input
+          class="form-control mr-sm-2"
+          type="password"
+          name="password"
+          placeholder="Password"
+          required
+          [(ngModel)]="model.password"
+        />
+        <button class="btn btn-success my-2 my-sm-0" type="submit">
+          Login
+        </button>
+      </form>
+      <a [routerLink]="['/register']">Register</a>
+    </div>
+  </div>
+</nav>

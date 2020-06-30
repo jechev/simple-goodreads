@@ -5,7 +5,7 @@ import { Book } from '../../_models/book';
 @Component({
   selector: 'app-books-list',
   templateUrl: './books-list.component.html',
-  styleUrls: ['./books-list.component.css'],
+  styleUrls: ['./books-list.component.scss'],
 })
 export class BooksListComponent implements OnInit {
   books: Book[] = new Array();
@@ -42,7 +42,7 @@ export class BooksListComponent implements OnInit {
     const books: Book[] = new Array();
     res.forEach((element) => {
       const book: Book = new Book();
-      book.id = element.id;
+      book.volumeId = element.id;
       if (element.volumeInfo) {
         if (element.volumeInfo.title) {
           book.title = element.volumeInfo.title;
@@ -55,6 +55,12 @@ export class BooksListComponent implements OnInit {
         }
         if (element.volumeInfo.publishedDate) {
           book.publishedDate = element.volumeInfo.publishedDate;
+        }
+        if (element.volumeInfo.description) {
+          book.description = element.volumeInfo.description;
+        }
+        if (element.volumeInfo.pageCount) {
+          element.pages = element.volumeInfo.pageCount;
         }
       }
 

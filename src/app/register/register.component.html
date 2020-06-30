@@ -1,0 +1,52 @@
+<div class="d-flex mx-auto justify-content-center">
+  <form #registerForm="ngForm" (ngSubmit)="register(registerForm)" novalidate>
+    <h2 class="text-center text-success">Register</h2>
+    <hr />
+
+    <div class="form-group text-center">
+      <input
+        class="form-control mr-sm-2"
+        type="text"
+        name="email"
+        placeholder="Email"
+        required
+        [(ngModel)]="model.email"
+        [email]="true"
+      />
+      <div
+        *ngIf="registerForm.controls?.email?.invalid && registerForm.submitted"
+        class="error"
+      >
+        Incorrect format
+      </div>
+    </div>
+    <div class="form-group text-center">
+      <input
+        class="form-control mr-sm-2"
+        type="password"
+        name="password"
+        placeholder="Password"
+        required
+        [(ngModel)]="model.password"
+        minlength="4"
+      />
+      <div
+        *ngIf="
+          registerForm.controls?.password?.invalid && registerForm.submitted
+        "
+        class="error"
+      >
+        At least 4 characters.
+      </div>
+    </div>
+
+    <div class="form-group text-center">
+      <button class="btn btn-success" type="submit">
+        Register
+      </button>
+      <button class="btn btn-default" type="button" (click)="cancel()">
+        Cancel
+      </button>
+    </div>
+  </form>
+</div>

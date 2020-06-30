@@ -1,0 +1,51 @@
+{
+  "users": [
+    {
+      "email": "demo@demo.bg",
+      "password": "$2a$10$.HWrD24U7njy3MfSWN8hCu4NokGIszFB8thP7yVo700WTCW0SvP42",
+      "books": [],
+      "id": 1
+    }
+  ],
+  "books": [
+    {
+      "volumeId": "0UVGCwAAQBAJ",
+      "title": "Crazy Gran",
+      "author": "Gary Botting",
+      "img": "http://books.google.com/books/content?id=0UVGCwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&imgtk=AFLRE72xQVYgxnM8Aw1hNZQUvF2uGKBOQ5UXN772MPs09964fqxMKXdvVQTIn_o4JGRlHpGWPDmKf2is2InKg8UWqhaOTQltsZlauZ5Xc7FUoQiBvA8rZCWFICC7h0X7dE5kwUnVh48k&source=gbs_api",
+      "publishedDate": "2015-12-10",
+      "description": "Amy’s Uncle Al and her mother Ariel both seem to have insider knowledge that something terrible is going to happen in Manhattan on September 11, 2001. Thousands heeded Ariel’s warning in The Chrislamic Messenger to flee New York City. But how did they know? The military believes Amy’s father is somehow behind 9/11, even though he is supposedly dead and buried. As a weapons technologist, he was custodian of two Mark 53 nuclear bombs that were jettisoned by a failing B-52 over Champlain Lake at the same time he went missing in 1978. Now, years later, he seems to have come back from the dead. Only Amy can stop her uncle from executing her father’s plan to detonate one of the massive bombs inside a uranium mine in the Adirondacks, causing a cataclysmic chain reaction that would create a sixth Great Lake and precipitate evacuation of the Eastern seaboard. Uncle Al is intent on stopping Amy from alerting authorities, by supplying her Chrislamic mother with evidence that although Amy swears she is a virgin, she and her cousin Ron have been indulging in “fornication.” According to Sharia law and Deuteronomy 13, Amy must be stoned to death. As Uncle Al prepares to detonate the dirtiest bomb in history, Ron attempts to stop Amy’s stoning before New York State blows sky high.",
+      "pages": 356,
+      "read": false,
+      "wantToRead": true,
+      "userId": 1,
+      "id": 1
+    },
+    {
+      "volumeId": "C6vhxtQEElwC",
+      "title": "Running Crazy",
+      "author": "D. J. Adams",
+      "img": "http://books.google.com/books/content?id=C6vhxtQEElwC&printsec=frontcover&img=1&zoom=5&edge=curl&imgtk=AFLRE73ymkeUQCiQc-R8UYFUf8E9I0iLiadF-35kW2qXhpSJ_gLO9LLSSG1LfqcfDRPOrYCTXh8KO260zTqEQyOEtzqqsIXbfedBGvZGluTgXYOn9jwouWIYJcviLNC_N31nEDFvAq6X&source=gbs_api",
+      "publishedDate": "2003-06",
+      "description": "In real-life clairvoyant D. J. Adam's second crime thriller, her fictional Lindsay Freeman takes on two serial killers who stalk teenagers at shopping malls, torture and kill them. Lindsay is called in to track Rebecca Torman, who has been kidnapped while shopping for her prom dress at the mall near her home in a small town New England. Three other Ripney High School students have already been murdered when Rebecca disappears. Lindsay is drawn into the web of drugs, alcohol, rage and all the dreams that come undone because of them. For four terrible days she delves into the minds of serial killers Mike Hennessey and his pathological sidekick Tony Garrison in a desperate search for Rebecca before she is brutally killed like her classmates. D.J. Adams has based this thriller on the case she now says was \"so heinous that it has taken me years to write it down, years to want to recall it.\"",
+      "pages": 348,
+      "read": false,
+      "wantToRead": true,
+      "userId": 1,
+      "id": 2
+    },
+    {
+      "volumeId": "s1aMroOtmYMC",
+      "title": "Hijab Sang Pencinta",
+      "author": "Ramlee Awang Murshid",
+      "img": "http://books.google.com/books/content?id=s1aMroOtmYMC&printsec=frontcover&img=1&zoom=5&edge=curl&imgtk=AFLRE70enDD_dluMHqhRfPoH9Rp_UL6Afcu8noOf1JKa10g93qAnd76xY8Oc3T6HVrScdPavqGxZLjSKOBKh6decjgyhiKePuhwi5-P_x2sIW-_brCpqZEEdBcpsNyRXERqMUDXJnmGA&source=gbs_api",
+      "publishedDate": "2008",
+      "description": "<p>Rasa rindu terhadap keluarga menggamit hati Saifudin merentasi Tanah Sumatera untuk pulang ke Punggor, Tanah Melayu. Namun, kejahatan seolah-olah memburunya. Setiap langkahnya dibayangi halangan yang tak berkesudahan. Berita kepulangannya di Tanah Melayu sampai ke pengetahuan Sultan Melaka. </p><p>Kemarahan baginda kerana tidak dapat mengahwini Haryani menyebabkan dia mula menjadi buruan orang istana. Saifudin lari ke gua. Di situlah bermulanya satu lagi keajaiban. Jasadnya berpindah merentasi hijab masa untuk sampai ke abad 21. Sekali lagi Saifudin bertemu dengan Haryani dan kisah cinta yang melangkaui masa mekar semula. Namun, kejahatan yang senantiasa mengiringi setiap injak kakinya masih mengekori. Kali ini tebakan musuh durjana mengakibatkan sengketa yang tercetus di langit berlaku lagi.</p>",
+      "pages": 510,
+      "read": false,
+      "wantToRead": true,
+      "userId": 1,
+      "id": 3
+    }
+  ]
+}
