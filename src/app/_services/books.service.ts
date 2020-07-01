@@ -16,9 +16,9 @@ export class BooksService {
     );
   }
 
-  public getBooksBySearch(searchValue) {
+  public getBooksBySearch(searchValue, startIndex) {
     return axios.get(
-      `${this.baseUrl}/volumes?q=${searchValue}&projection=lite`
+      `${this.baseUrl}/volumes?q=${searchValue}&startIndex=${startIndex}&projection=lite`
     );
   }
 
@@ -40,5 +40,9 @@ export class BooksService {
 
   public getBooksForUser(userId) {
     return axios.get(`${this.dbUrl}/users/${userId}/books`);
+  }
+
+  public deleteBook(id) {
+    return axios.delete(`${this.dbUrl}/books/${id}`);
   }
 }

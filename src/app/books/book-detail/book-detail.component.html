@@ -1,5 +1,9 @@
 <div class="card mx-auto" style="width: 28rem;" *ngIf="book && canLoaded">
-  <img class="card-img-top" [src]="book.img" alt="cover" />
+  <img
+    class="card-img-top"
+    [src]="book.img || '../../../assets/cover.png'"
+    alt="cover"
+  />
   <div class="card-body">
     <h5 class="card-title">{{ book.title }}</h5>
   </div>

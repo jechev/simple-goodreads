@@ -37,7 +37,10 @@ export class BookDetailComponent implements OnInit {
           if (res.data.volumeInfo.authors) {
             this.book.author = res.data.volumeInfo.authors[0];
           }
-          if (res.data.volumeInfo.imageLinks.smallThumbnail) {
+          if (
+            res.data.volumeInfo.imageLinks &&
+            res.data.volumeInfo.imageLinks.smallThumbnail
+          ) {
             this.book.img = res.data.volumeInfo.imageLinks.smallThumbnail;
           }
           if (res.data.volumeInfo.publishedDate) {
@@ -64,6 +67,8 @@ export class BookDetailComponent implements OnInit {
             }
             this.canLoaded = true;
           });
+        } else {
+          this.canLoaded = true;
         }
       })
       .catch((err) => {
@@ -75,6 +80,7 @@ export class BookDetailComponent implements OnInit {
     const bookForAdd: BookForUser = this._convertBookToBookForUser();
     bookForAdd.read = true;
     this.bookService.addBookInUserList(bookForAdd).then((res) => {
+      this.isUsedBook = true;
       this.alertifyService.success('You added new book in Read List');
     });
   }
@@ -83,6 +89,7 @@ export class BookDetailComponent implements OnInit {
     const bookForAdd: BookForUser = this._convertBookToBookForUser();
     bookForAdd.wantToRead = true;
     this.bookService.addBookInUserList(bookForAdd).then((res) => {
+      this.isUsedBook = true;
       this.alertifyService.success('You added new book in Want to Read List');
     });
   }

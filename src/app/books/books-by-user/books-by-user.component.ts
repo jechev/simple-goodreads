@@ -9,10 +9,12 @@ import { AlertifyService } from 'src/app/_services/alertify.service';
   templateUrl: './books-by-user.component.html',
   styleUrls: ['./books-by-user.component.scss'],
 })
-export class BooksByUserComponent implements OnInit {
+export class BooksByUserComponent implements OnInit, DoCheck {
   books: BookForUser[];
   status: string;
   header: string;
+  currentUserId: number;
+
   constructor(
     private route: ActivatedRoute,
     private booksService: BooksService,
@@ -21,36 +23,11 @@ export class BooksByUserComponent implements OnInit {
 
   ngOnInit() {
     this.takeBooksFromDB();
+    this.currentUserId = Number(sessionStorage.getItem('userId'));
   }
-  // tslint:disable-next-line: use-lifecycle-interface
+
   ngDoCheck() {
     this.takeBooksFromDB();
-  }
-
-  changeToRead(book: BookForUser) {
-    book.read = true;
-    book.wantToRead = false;
-    this.booksService
-      .editBook(book.id, book)
-      .then((res) => {
-        console.log('Done');
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }
-
-  changeToWantToRead(book: BookForUser) {
-    book.wantToRead = true;
-    book.read = false;
-    this.booksService
-      .editBook(book.id, book)
-      .then((res) => {
-        console.log('Done');
-      })
-      .catch((err) => {
-        console.log(err);
-      });
   }
 
   changeBookToOtherStatus(status: string, book: BookForUser) {
@@ -71,6 +48,24 @@ export class BooksByUserComponent implements OnInit {
       .catch((err) => {
         console.log(err);
       });
+  }
+
+  deleteBook(book) {
+    if (this.currentUserId === book.userId) {
+      this.alertifyService.confirm(
+        'Are you want to delete this book from your list?',
+        () =>
+          this.booksService
+            .deleteBook(book.id)
+            .then(() => {
+              this.removeBookFromArray(book.id);
+              this.alertifyService.success('You deleted the book');
+            })
+            .catch((err) => {
+              console.log(err);
+            })
+      );
+    }
   }
 
   takeBooksFromDB() {

@@ -13,25 +13,6 @@ export class BooksListComponent implements OnInit {
   books: Book[] = new Array();
   searchValue: string;
   genre = 'thriller';
-  genres: string[] = [
-    'Fantasy',
-    'Science fiction',
-    'Western',
-    'Romance',
-    'Thriller',
-    'Mystery',
-    'Detective story',
-    'Dystopia',
-    'Memoir',
-    'Biography',
-    'Play',
-    'Musical',
-    'Satire',
-    'Haiku',
-    'Horror',
-    'DIY (Do It Yourself)',
-    'Dictionary',
-  ];
   constructor(private booksService: BooksService) {}
 
   ngOnInit() {
@@ -39,28 +20,27 @@ export class BooksListComponent implements OnInit {
   }
 
   loadBooks() {
-    this.booksService
-      .getBooksByGenre(this.genre, (this.page - 1) * 10)
-      .then((res) => {
-        this.totalItems = Number(res.data.totalItems);
-        console.log(this.totalItems);
-        this.books = this._convertResponseToBooksArray(res.data.items);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }
-
-  searchBooks() {
-    this.booksService
-      .getBooksBySearch(this.searchValue)
-      .then((res) => {
-        this.totalItems = Number(res.data.totalItems);
-        this.books = this._convertResponseToBooksArray(res.data.items);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    if (this.searchValue) {
+      this.booksService
+        .getBooksBySearch(this.searchValue, (this.page - 1) * 10)
+        .then((res) => {
+          this.totalItems = Number(res.data.totalItems);
+          this.books = this._convertResponseToBooksArray(res.data.items);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } else {
+      this.booksService
+        .getBooksByGenre(this.genre, (this.page - 1) * 10)
+        .then((res) => {
+          this.totalItems = Number(res.data.totalItems);
+          this.books = this._convertResponseToBooksArray(res.data.items);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
   }
 
   private _convertResponseToBooksArray(res): Book[] {

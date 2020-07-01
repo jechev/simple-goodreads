@@ -5,6 +5,12 @@
       "password": "$2a$10$.HWrD24U7njy3MfSWN8hCu4NokGIszFB8thP7yVo700WTCW0SvP42",
       "books": [],
       "id": 1
+    },
+    {
+      "email": "test@test.bg",
+      "password": "$2a$10$KHl5fwVADhZWDmJToarNXOSaE9z4RwOpbOymrcx2XzYMgWAV3PXGK",
+      "books": [],
+      "id": 2
     }
   ],
   "books": [
@@ -35,17 +41,39 @@
       "id": 2
     },
     {
+      "volumeId": "-_6Z2_JdZdwC",
+      "title": "Hot Springs",
+      "author": "Stephen Hunter",
+      "img": "http://books.google.com/books/content?id=-_6Z2_JdZdwC&printsec=frontcover&img=1&zoom=5&edge=curl&imgtk=AFLRE72dLN8sbWaUEeLM8AcjNcgHjt_6iMdL5r1RnwGXP6G8X9nSyd6AWZh2QshJZmoQARHRVbmsBpCT7_OytdH_BGRjNGWY1rXcpZHaT2EtIxZ6f0BbppgCPgqFaIpCUVfOoZ9nkjxV&source=gbs_api",
+      "publishedDate": "2000",
+      "description": "In the summer of 1946, the most wide-open town in America is Hot Springs, Arkansas, a city of ancient, legendary corruption. While the pilgrims take the cure in the mineral-rich 142-degree water that bubbles from the earth, the brothels and casinos are the true source of the town's prosperity. It is run by an English-born gangster named Owney Maddox, who represents the New York syndicate and rules his empire like a Saxon lord while sporting an ascot and jodhpurs. But it is all about to be challenged. A newly elected county prosecutor wants to take on the big boys and save the city's soul (he also wouldn't mind being the next governor). He begins a war on the gambling interests and, knowing the war will be long and bloody, hires an ex-Marine sergeant, Earl Swagger, who won the Medal of Honor on Iwo Jima, to run it. Swagger knows how to fight with guns as well as any man in the world. But he is haunted: the savage fighting he just barely survived and the men he left behind in the Pacific still shadow his mind, leaving a terrible melancholy. There are even darker memories: a murdered father who beat him mercilessly and drove a younger brother to suicide. And he's torn by his own impending fatherhood, as his wife, Junie, nears term. It isn't that Earl Swagger is afraid of dying; more scary still, it's possible that he yearns for it. The gangsters fight back, setting up a campaign of ambush and counterambush in the brothels, casinos and alleys of the City of the Vapors. Raids erupt into full-out combat amid screaming prostitutes and fleeing johns. The body count mounts. Meanwhile, the politics behind the war are shifting: Will the prosecuting attorney stick with his raiders or sell them out to curry favor with the state's political machine? Will Owney Maddox defeat the raiders but lose a personal battle against a cunning rival from the West who foresees a Hot Springs in the Nevada desert as the future franchise city of organized crime? But most important, will Earl Swagger survive yet another hard war, not merely with his body but also with his soul intact? Packed with page-turning action, sex, sin and crime, Stephen Hunter's <i>Hot Springs</i> is at once a relentlessly violent and deeply touching story.",
+      "pages": 478,
+      "read": true,
+      "wantToRead": false,
+      "userId": 1,
+      "id": 3
+    },
+    {
+      "volumeId": "jnBCwAEACAAJ",
+      "title": "A Woman's Face",
+      "publishedDate": "1941",
+      "read": true,
+      "wantToRead": false,
+      "userId": 1,
+      "id": 5
+    },
+    {
       "volumeId": "s1aMroOtmYMC",
       "title": "Hijab Sang Pencinta",
       "author": "Ramlee Awang Murshid",
-      "img": "http://books.google.com/books/content?id=s1aMroOtmYMC&printsec=frontcover&img=1&zoom=5&edge=curl&imgtk=AFLRE70enDD_dluMHqhRfPoH9Rp_UL6Afcu8noOf1JKa10g93qAnd76xY8Oc3T6HVrScdPavqGxZLjSKOBKh6decjgyhiKePuhwi5-P_x2sIW-_brCpqZEEdBcpsNyRXERqMUDXJnmGA&source=gbs_api",
+      "img": "http://books.google.com/books/content?id=s1aMroOtmYMC&printsec=frontcover&img=1&zoom=5&edge=curl&imgtk=AFLRE70vt9lgNsyEM5uD_AEA6GF7ipmRnNkQR9eBtLU1S2XwJub4TzOr_kG8slUd1TdyMRczhICAC_C8elYYvU06yeF-HwIAUS_Ok2bVnaAKfFSno7-jV0G1uxt0i-uo-hGPMLyBbfi_&source=gbs_api",
       "publishedDate": "2008",
-      "description": "<p>Rasa rindu terhadap keluarga menggamit hati Saifudin merentasi Tanah Sumatera untuk pulang ke Punggor, Tanah Melayu. Namun, kejahatan seolah-olah memburunya. Setiap langkahnya dibayangi halangan yang tak berkesudahan. Berita kepulangannya di Tanah Melayu sampai ke pengetahuan Sultan Melaka. </p><p>Kemarahan baginda kerana tidak dapat mengahwini Haryani menyebabkan dia mula menjadi buruan orang istana. Saifudin lari ke gua. Di situlah bermulanya satu lagi keajaiban. Jasadnya berpindah merentasi hijab masa untuk sampai ke abad 21. Sekali lagi Saifudin bertemu dengan Haryani dan kisah cinta yang melangkaui masa mekar semula. Namun, kejahatan yang senantiasa mengiringi setiap injak kakinya masih mengekori. Kali ini tebakan musuh durjana mengakibatkan sengketa yang tercetus di langit berlaku lagi.</p>",
+      "description": "<p>Rasa rindu terhadap keluarga menggamit hati Saifudin merentasi Tanah Sumatera untuk pulang ke Punggor, Tanah Melayu. Namun, kejahatan seolah-olah memburunya. Setiap langkahnya dibayangi halangan yang tak berkesudahan. Berita kepulangannya di Tanah Melayu sampai ke pengetahuan Sultan Melaka. </p><p>Kemarahan baginda kerana tidak dapat mengahwini Haryani menyebabkan dia mula menjadi buruan orang istana. Saifudin lari ke gua. Di situlah bermulanya satu lagi keajaiban. Jasadnya berpindah merentasi hijab masa untuk sampai ke abad 21. Sekali lagi Saifudin bertemu dengan Haryani dan kisah cinta yang melangkaui masa mekar semula. Namun, kejahatan yang senantiasa mengiringi setiap injak kakinya masih mengekori. Kali ini tebakan musuh durjana mengakibatkan sengketa yang tercetus di langit berlaku lagi.</p>",
       "pages": 510,
-      "read": false,
-      "wantToRead": true,
-      "userId": 1,
-      "id": 3
+      "read": true,
+      "wantToRead": false,
+      "userId": 2,
+      "id": 6
     }
   ]
 }

@@ -4,7 +4,7 @@ import { UserService } from '../_services/user.service';
 import { AlertifyService } from '../_services/alertify.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthGuard implements CanActivate {
   constructor(
@@ -19,7 +19,7 @@ export class AuthGuard implements CanActivate {
     }
 
     this.alertify.error('You shall not the pass!!!');
-    this.router.navigate(['/home']);
+    this.router.navigate(['/']);
     return false;
   }
 }

@@ -8,7 +8,7 @@
     <th></th>
   </tr>
   <tr *ngFor="let book of books">
-    <td><img [src]="book.img" alt="cover" /></td>
+    <td><img [src]="book.img || '../../../assets/book.png'" alt="cover" /></td>
     <td>{{ book.title }}</td>
     <td>{{ book.author }}</td>
     <td>{{ book.publishedDate }}</td>
@@ -25,6 +25,7 @@
         *ngIf="status !== 'read'"
         >Read</a
       >
+      <a (click)="deleteBook(book)" class="btn btn-danger ml-1">Delete</a>
     </td>
   </tr>
 </table>
